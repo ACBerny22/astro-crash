@@ -1,0 +1,30 @@
+---
+import '@fontsource/kanit';
+import perks from '../data/perks'
+import Card from './Card.astro';
+---
+
+<div class="mx-20 xl:mx-48 py-8">
+    <h1 class="text-center my-20 text-5xl">Protectors of our home</h1>
+
+    {/* Contenedor para las dos columnas */}
+    <div class="flex flex-col 2xl:grid 2xl:grid-cols-2 gap-32">
+        <div class="flex flex-col justify-center items-center xl:mx-0 lg:mx-48 md:mx-32">
+            <img src="./img/planet.png" alt="">
+        </div>
+        <div class="flex flex-col gap-10 md:grid md:grid-cols-2">
+            {perks.map((object) => (
+                <Card tag={object.tag} title={object.title} body={object.body}/>
+              ))}
+        </div>
+    </div>
+</div>
+
+<script>
+</script>
+
+<style>
+    h1{
+        font-family: "kanit";
+    }
+</style>

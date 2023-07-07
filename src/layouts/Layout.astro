@@ -1,0 +1,33 @@
+---
+
+import NavBar from '../components/NavBar.jsx';
+import ReactiveLayout from './ReactiveLayout'
+import {isDarkThemeOn} from "../thememodal"
+
+
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+	<body>
+		<ReactiveLayout client:load>
+			<NavBar client:load/>
+			<slot/>
+		</ReactiveLayout>
+	</body>
+</html>
+
+

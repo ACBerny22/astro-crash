@@ -1,0 +1,84 @@
+---
+import '@fontsource/kanit';
+import {RiSpaceShipLine} from "react-icons/ri"
+import {GiShotgunRounds} from "react-icons/gi"
+---
+
+<div class="mx-20 py-8">
+    <h1 class="text-center my-20 text-5xl">Welcome to the battlefield's future</h1>
+    <div class="grid grid-rows-2 md:grid-cols-2 gap-10">
+        <div class="flex flex-col text-justify items-center ">
+            <RiSpaceShipLine className='text-8xl mb-14 mt-10'></RiSpaceShipLine>
+            <p class="text-xl font-light font-lato">
+                With a relentless focus on research and development, we specialize in creating state-of-the-art weapons that
+                revolutionize the battlefield. Our visionary team of engineers, scientists, and designers work tirelessly to 
+                conceive, design, and manufacture a diverse range of futuristic weapons that redefine warfare.
+            </p>
+        </div>
+        <div class="flex flex-col text-justify items-center ">
+            <GiShotgunRounds className='text-8xl mb-14 mt-10'></GiShotgunRounds>
+            <p class="text-xl font-light font-lato">
+                From energy-based weapons harnessing the raw power of plasma and lasers to intelligent firearms with advanced 
+                targeting systems, our arsenal encompasses the pinnacle of futuristic warfare. Welcome to the forefront of innovation and power - 
+                the world of futuristic weaponry. At our cutting-edge weapon enterprise, we are committed to pushing the boundaries of technology and 
+                equipping our forces with the most advanced armaments available.
+            </p>
+        </div>
+        <div class="flex flex-col text-justify items-center ">
+            <RiSpaceShipLine className='text-8xl mb-14 mt-10'></RiSpaceShipLine>
+            <p class="text-xl font-light font-lato">
+                From energy-based weapons harnessing the raw power of plasma and lasers to intelligent firearms with advanced 
+                targeting systems, our arsenal encompasses the pinnacle of futuristic warfare. Welcome to the forefront of innovation and power - 
+                the world of futuristic weaponry. At our cutting-edge weapon enterprise, we are committed to pushing the boundaries of technology and 
+                equipping our forces with the most advanced armaments available.
+            </p>
+        </div>
+        <div class="flex flex-col text-justify items-center ">
+            <GiShotgunRounds className='text-8xl mb-14 mt-10'></GiShotgunRounds>
+            <p class="text-xl font-light font-lato">
+                With a relentless focus on research and development, we specialize in creating state-of-the-art weapons that
+                revolutionize the battlefield. Our visionary team of engineers, scientists, and designers work tirelessly to 
+                conceive, design, and manufacture a diverse range of futuristic weapons that redefine warfare.
+            </p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry);
+            if(entry.isIntersecting){
+                entry.target.classList.add('show');
+            }
+            else{
+                entry.target.classList.remove('show');
+            }
+        });
+    });
+
+    const hiddenElements = document.querySelectorAll('.oculto');
+    hiddenElements.forEach((el) => observer.observe(el));
+
+
+</script>
+
+<style>
+    h1{
+        font-family: "kanit";
+    }
+
+    .oculto{
+        opacity: 0;
+        filter: blur(5px);
+        transform: translateX(-90%);
+        transition: all 1.5s;
+    }
+
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+</style>

@@ -1,0 +1,17 @@
+---
+export interface Props {
+	title: string;
+	body: string;
+	tag: string;
+}
+const { tag, title, body } = Astro.props;
+
+---e
+
+<div class="flex flex-col justify-start rounded-xl shadow-xl p-10">
+	<div>
+		<label class="p-3 dark:bg-white dark:text-zinc-700 bg-zinc-800 rounded-xl text-white font-lato font-bold">{tag}</label>
+	</div>
+	<h1 class="font-lato font-bold text-2xl my-10">{title}</h1>
+	<p class="font-lato font-light text-lg">{body}</p>
+</div>

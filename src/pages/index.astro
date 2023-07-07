@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import InfoSection from '../components/InfoSection.astro'
+import Benefits from "../components/Benefits.astro"
+---
+
+<Layout title="Astram Dynamics">
+	<main>
+		<Hero/>
+		<InfoSection/>
+		<svg class="w-full h-2">
+			<line class="stroke-zinc-500" x1="5%" y1="0.5" x2="95%" y2="0.5" />
+		</svg>
+		<Benefits/>
+		<svg class="w-full h-2">
+			<line class="stroke-zinc-500" x1="5%" y1="0.5" x2="95%" y2="0.5" />
+		</svg>
+	</main>
+</Layout>
